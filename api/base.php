@@ -3,7 +3,7 @@
 class DB
 {
     protected $table;
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=db15";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=drinkbar";
     protected $pdo;
 
     public function __construct($table)
@@ -114,7 +114,7 @@ class DB
 
 function q($sql)
 {
-    $dsn = "mysql:host=localhost;charset=utf8;dbname=db15";
+    $dsn = "mysql:host=localhost;charset=utf8;dbname=drinkbar";
     $pdo = new PDO($dsn, 'root', '');
     return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -133,10 +133,6 @@ function dd($array)
 
 
 
-$Title = new DB('title');
-$Ad = new DB('ad');
-$Mvim = new DB('mvim');
-$Image = new DB('image');
-$News = new DB('news');
-$Admin = new DB('admin');
-$Menu = new DB('menu');
+
+$News = new DB('bar_news');
+

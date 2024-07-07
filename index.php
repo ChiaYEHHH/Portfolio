@@ -1,4 +1,4 @@
-<?php include_once "./api/base.phpc"; ?>
+<?php include_once "./api/base.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +15,7 @@
 
 <body>
     <!-- nav -->
-    <nav class="navbar navbar-expand-lg bg-body-secondary">
+    <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
         <div class="container">
             <!-- logo -->
             <a class="navbar-brand" href="#">DrinkBar</a>
@@ -25,9 +25,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="?do=news">News</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             下拉選單
@@ -40,6 +42,9 @@
                             </li>
                             <li><a class="dropdown-item" href="#">預約特製</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="?do=creative">Creative</a>
                     </li>
                     <ul class="nav">
                         <li class="nav-item">
@@ -84,19 +89,27 @@
     </div>
     <?php
 
-			$do = $_GET['do'] ?? 'main';
-			$file = "./front/{$do}.php";
-			if (file_exists($file)) {
-				include $file;
-			} else {
-				include "./front/main.php";
-			}
+    $do = $_GET['do'] ?? 'main';
+    $file = "./front/{$do}.php";
+    if (file_exists($file)) {
+        include $file;
+    } else {
+        include "./front/main.php";
+    }
 
-			?>
-    
+    ?>
+
     <!-- footer -->
-     <div class="container">
-        
-     </div>
+    <footer class="navbar navbar-expand-lg mt-3" style="background-color: #e3f2fd;">
+        <div class="container">
+            <div class="navbar-brand">Drinkbar</div>
+            <span class="navbar-text">
+                DrinkBar designer ChiaYEH
+            </span>
+
+        </div>
+    </footer>
+
 </body>
+
 </html>
