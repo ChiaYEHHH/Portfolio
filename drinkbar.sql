@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-07-07 17:47:48
+-- 產生時間： 2024-07-08 20:00:33
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -106,8 +106,22 @@ CREATE TABLE `bar_sales` (
   `title` text NOT NULL,
   `pic` text NOT NULL,
   `price` int(11) NOT NULL,
+  `variety` text NOT NULL,
   `sh` int(1) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `bar_sales`
+--
+
+INSERT INTO `bar_sales` (`id`, `title`, `pic`, `price`, `variety`, `sh`) VALUES
+(1, '紅澄', 'drink1.jpg', 60, 'drink', 1),
+(2, '柳紅', 'drink2.jpg', 70, 'drink', 1),
+(3, '柳澄酒', 'drink3.jpg', 100, 'drink', 1),
+(4, '梨檸莓', 'drink4.jpg', 90, 'drink', 1),
+(5, '啵啵澄棒', 'drink5.jpg', 80, 'drink', 1),
+(6, '檸有冰', 'drink6.jpg', 250, 'drink', 1),
+(7, '紗冰', 'drink7.jpg', 87, 'drink', 1);
 
 -- --------------------------------------------------------
 
@@ -205,7 +219,7 @@ ALTER TABLE `bar_orders`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `bar_sales`
 --
 ALTER TABLE `bar_sales`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `bar_staffs`
