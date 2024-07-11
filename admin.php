@@ -1,52 +1,53 @@
 <?php include_once "./api/base.php"; ?>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>DRINK BAR 後台</title>
+</head>
 <!-- nav -->
-<nav class="navbar navbar-expand-sm navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Logo</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- nav 內容 -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="subnav">
-                    <button class="subnavbtn">首頁 <i class="fa fa-caret-down"></i></button>
-                    <div class="subnav-content">
-                        <a href="#LOGO">LOGO</a>
-                        <a href="#CAROUSEL">CAROUSEL</a>
-                        <a href="#NEWS">NEWS</a>
-                        <a href="#FOOTER">FOOTER</a>
-                    </div>
-                </li>
-                <li class="subnav"><a href="#PRODUCT">PRODUCT</a></li>
-                <li class="subnav"><a href="#STAFF">STAFF</a></li>
-                <li class="subnav"><a href="#ORDER">ORDER</a></li>
+<nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+        <div class="container">
+            <!-- logo -->
+            <a class="navbar-brand" href="#">DrinkBar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="?do=news_b">News</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            首頁外觀
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="?do=logo_b">LOGO</a></li>
+                            <li><a class="dropdown-item" href="?do=banner_b">BANNER</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="?do=creative">Creative</a>
+                    </li>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="bi bi-cart4"></i></a>
+                        </li>
+                    </ul>
 
-            </ul>
+
+                </ul>
+            </div>
         </div>
-    </div>
-    <!-- <div class="navbar">
-            <a href="#home">Home</a>
-            <div class="subnav">
-                <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
-                <div class="subnav-content">
-                    <a href="#company">Company</a>
-                    <a href="#team">Team</a>
-                    <a href="#careers">Careers</a>
-                </div>
-            </div>
-            <div class="subnav">
-                <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
-                <div class="subnav-content">
-                    <a href="#bring">Bring</a>
-                    <a href="#deliver">Deliver</a>
-                    <a href="#package">Package</a>
-                    <a href="#express">Express</a>
-                </div>
-            </div>
-        </div> -->
-</nav>
+    </nav>
 <!-- nav end -->
 <!-- carousel -->
 <div class="container">
@@ -112,3 +113,14 @@ if (file_exists($file)) {
 
 ?>
 <!-- content end -->
+
+<!-- footer -->
+<footer class="navbar navbar-expand-lg mt-3" style="background-color: #e3f2fd;">
+        <div class="container">
+            <div class="navbar-brand">Drinkbar</div>
+            <span class="navbar-text">
+                DrinkBar designer ChiaYEH
+            </span>
+
+        </div>
+    </footer>
