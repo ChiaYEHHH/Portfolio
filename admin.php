@@ -10,7 +10,7 @@
     <title>DRINK BAR 後台</title>
 </head>
 <!-- nav -->
-<nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg">
         <div class="container">
             <!-- logo -->
             <a class="navbar-brand" href="#">DrinkBar</a>
@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="?do=news_b">News</a>
@@ -115,7 +115,7 @@ if (file_exists($file)) {
 <!-- content end -->
 
 <!-- footer -->
-<footer class="navbar navbar-expand-lg mt-3" style="background-color: #e3f2fd;">
+<footer class="navbar navbar-expand-lg mt-3">
         <div class="container">
             <div class="navbar-brand">Drinkbar</div>
             <span class="navbar-text">

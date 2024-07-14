@@ -15,7 +15,7 @@
 
 <body>
     <!-- nav -->
-    <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <!-- logo -->
             <a class="navbar-brand" href="#">DrinkBar</a>
@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="?do=news">News</a>
@@ -94,7 +94,7 @@
             $news = $News->all(['sh' => 1]);
             foreach ($news as $n) {
                 echo "<div class='col-3 card overflow-hidden' style='height: 160px;'>";
-                echo "<h5 class='card-title text-center'>{$n['title']}</h5>";
+                echo "<h5 class='card-title text-center' style='color:rgb(66, 170, 153);font-weight:bold;'>{$n['title']}</h5>";
                 echo "<div class='card-text'>";
                 echo "<p>{$n['article']}</p>";
                 echo "</div>";
@@ -122,10 +122,10 @@
     <!-- main end -->
 
     <!-- footer -->
-    <footer class="navbar navbar-expand-lg mt-3" style="background-color: #e3f2fd;">
+    <footer class="navbar navbar-expand-lg mt-3">
         <div class="container">
-            <div class="navbar-brand">Drinkbar</div>
-            <span class="navbar-text">
+            <a class="navbar-brand" href="#">DrinkBar</a>
+            <span class="navbar-item">
                 DrinkBar designer ChiaYEH
             </span>
 
