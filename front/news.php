@@ -1,8 +1,7 @@
-<div class="container">
-    <h1>最新消息</h1>
+<h1>最新消息</h1>
     <ul>
         <?php
-        $news = $News->all(['sh' => 1]);
+        $news = $News->all();
         foreach ($news as $n) {
             echo "<li>";
             echo $n['title'];
@@ -13,4 +12,3 @@
 
         ?>
     </ul>
-</div>

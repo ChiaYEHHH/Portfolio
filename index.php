@@ -87,17 +87,39 @@
             </button>
         </div>
     </div>
-    <?php
+    <!-- news -->
+    <div class="container mt-3" id="news">
+        <div class="row justify-content-around">
+            <?php
+            $news = $News->all(['sh' => 1]);
+            foreach ($news as $n) {
+                echo "<div class='col-3 card overflow-hidden' style='height: 160px;'>";
+                echo "<h5 class='card-title text-center'>{$n['title']}</h5>";
+                echo "<div class='card-text'>";
+                echo "<p>{$n['article']}</p>";
+                echo "</div>";
+                echo "</div>";
+            }
 
-    $do = $_GET['do'] ?? 'main';
-    $file = "./front/{$do}.php";
-    if (file_exists($file)) {
-        include $file;
-    } else {
-        include "./front/main.php";
-    }
+            ?>
+        </div>
+    </div>
+    <!-- news end -->
+    <!-- main -->
+    <div class="container mt-3">
+        <?php
 
-    ?>
+        $do = $_GET['do'] ?? 'main';
+        $file = "./front/{$do}.php";
+        if (file_exists($file)) {
+            include $file;
+        } else {
+            include "./front/main.php";
+        }
+
+        ?>
+    </div>
+    <!-- main end -->
 
     <!-- footer -->
     <footer class="navbar navbar-expand-lg mt-3" style="background-color: #e3f2fd;">
