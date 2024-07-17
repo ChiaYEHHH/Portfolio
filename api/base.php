@@ -135,4 +135,9 @@ function dd($array)
 
 
 $News = new DB('bar_news');
+$Creative = new DB('bar_creatives');
+$Order = new DB('bar_orders');
+$Staff = new DB('bar_staffs');
+$Logo = new DB('bar_logos');
+$Sale = new DB('bar_sales');
 

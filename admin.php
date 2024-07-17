@@ -1,4 +1,5 @@
 <?php include_once "./api/base.php"; ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,43 +12,43 @@
 </head>
 <!-- nav -->
 <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <!-- logo -->
-            <a class="navbar-brand" href="#">DrinkBar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="?do=news_b">News</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            首頁外觀
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="?do=logo_b">LOGO</a></li>
-                            <li><a class="dropdown-item" href="?do=banner_b">BANNER</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="?do=creative">Creative</a>
-                    </li>
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="bi bi-cart4"></i></a>
-                        </li>
+    <div class="container">
+        <!-- logo -->
+        <a class="navbar-brand" href="#">DrinkBar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="?do=news_b">News</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        首頁外觀
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="?do=logo_b">LOGO</a></li>
+                        <li><a class="dropdown-item" href="?do=banner_b">BANNER</a></li>
                     </ul>
-
-
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="?do=creative">Creative</a>
+                </li>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-cart4"></i></a>
+                    </li>
                 </ul>
-            </div>
+
+
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 <!-- nav end -->
 <!-- carousel -->
 <div class="container">
@@ -85,42 +86,27 @@
 <!-- carousel end -->
 <!-- content -->
 <div class="container text-center">
-    <div class="row">
-        <div class="col ">
-            <img class="img-fluid" src="./images/course1.jpg" alt="" srcset="">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col ">
-            <img class="img-fluid" src="./images/course1.jpg" alt="" srcset="">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col ">
-            <img class="img-fluid" src="./images/course1.jpg" alt="" srcset="">
-        </div>
-    </div>
+    <?php
+
+    $do = $_GET['do'] ?? 'admin_b';
+    $file = "./backend/{$do}.php";
+    if (file_exists($file)) {
+        include $file;
+    } else {
+        include "./backend/admin_b.php";
+    }
+
+    ?>
 </div>
-<?php
-
-$do = $_GET['do'] ?? 'admin_b';
-$file = "./backend/{$do}.php";
-if (file_exists($file)) {
-    include $file;
-} else {
-    include "./backend/admin_b.php";
-}
-
-?>
 <!-- content end -->
 
 <!-- footer -->
 <footer class="navbar navbar-expand-lg mt-3">
-        <div class="container">
-            <div class="navbar-brand">Drinkbar</div>
-            <span class="navbar-text">
-                DrinkBar designer ChiaYEH
-            </span>
+    <div class="container">
+        <div class="navbar-brand">Drinkbar</div>
+        <span class="navbar-text">
+            DrinkBar designer ChiaYEH
+        </span>
 
-        </div>
-    </footer>
+    </div>
+</footer>
