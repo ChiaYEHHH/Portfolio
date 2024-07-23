@@ -1,3 +1,22 @@
+<style>
+    .card a {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: skyblue;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .card a:hover {
+        opacity: 0.6;
+        font-weight: bold;
+    }
+</style>
+
 <!-- 卡片 菜單 -->
 
 <div class="row justify-content-around mt-3">
@@ -9,7 +28,7 @@
                 <p class="card-text">
                     Price:
                 </p>
-                <a href="#" class="btn btn-primary">Add Cart</a>
+                <p><a href="#" class="btn btn-info">Add Cart</a></p>
             </div>
         </div>
     </div>

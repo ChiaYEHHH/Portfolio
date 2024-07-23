@@ -12,6 +12,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>DRINK BAR</title>
 </head>
+<style>
+    #login .row {
+        height: 60vh;
+        /* justify-content: center; */
+    }
+
+    #bgi img {
+        width: 100%;
+        /* height: 100%; */
+
+        /*background-image: url(./images/bgi.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;*/
+    }
+</style>
 
 <body>
     <!-- nav -->
@@ -46,47 +62,18 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="?do=creative">Creative</a>
                     </li>
-                    <div class="nav pe-0">
-                        <div class="nav-item">
-                            <a class="nav-link" href="login.php"><i class="bi bi-cart4">login</i></a>
-                        </div>
-                    </div>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./front/login.php"><i class="bi bi-cart4"></i></a>
+                        </li>
+                    </ul>
 
 
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- 旋轉圖片 -->
-    <div class="container">
 
-        <div id="carousel" class="carousel slide mt-3" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./images/course3.jpg" class="d-block w-100 carousel_Img img-fluid" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/course2.jpg" class="d-block w-100 carousel_Img img-fluid" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/course1.jpg" class="d-block w-100 carousel_Img img-fluid" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
     <!-- news -->
     <div class="container mt-3" id="news">
         <div class="row justify-content-around">
@@ -105,21 +92,47 @@
         </div>
     </div>
     <!-- news end -->
-    <!-- main -->
-    <div class="container mt-3">
-        <?php
+    <!-- login -->
+    <div class="container mt-4" id="login">
+        <div class="row justify-content-center">
+            <!-- Carousel -->
+            <div id="bgi" class="col-8 carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="img-fluid" src="./images/bgi01.jpg" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src="./images/bgi02.jpg" alt="" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src="./images/bgi03.jpg" alt="" class="d-block w-100">
+                    </div>
+                </div>
+            </div>
+            <!-- login form -->
+            <div class="col-4 p-5">
+                <h2>DrinkBar</h2>
+                <form>
+                    <div class="form-floating mb-3">
+                        <input type="account" class="form-control" name="floatingInput" id="acc">
+                        <label for="floatingInput">Account</label>
+                    </div>
 
-        $do = $_GET['do'] ?? 'main';
-        $file = "./front/{$do}.php";
-        if (file_exists($file)) {
-            include $file;
-        } else {
-            include "./front/main.php";
-        }
+                    <div class="form-floating">
+                        <input type="password" class="form-control" name="floatingPassword" id="pw">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="checkbox mt-2 mb-3">
+                        <label><input type="checkbox">Remember</label>
+                    </div>
 
-        ?>
+                    <button onclick="login()" type="button" class="btn btn-secondary">Submit</button>
+                    <button onclick="clear()" type="reset" class="btn btn-secondary"> Clear </button>
+                </form>
+            </div>
+        </div>
     </div>
-    <!-- main end -->
+    <!-- login end -->
 
     <!-- footer -->
     <footer class="navbar navbar-expand-lg mt-3">
@@ -135,3 +148,19 @@
 </body>
 
 </html>
+<script>
+    function login() {
+        $.post("./api/chk_login.php", {
+            acc: $('#acc').val(),
+            pw: $('#pw').val()
+        }, (chk) => {
+            if (chk == 1) {
+                alert("登入成功")
+                location.href = "admin.php";
+            } else {
+                alert("帳號密碼錯誤")
+                location.reload();
+            }
+        })
+    }
+</script>
