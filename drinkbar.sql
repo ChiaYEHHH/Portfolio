@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-07-08 20:00:33
+-- 產生時間： 2024-07-26 10:20:04
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -81,19 +81,21 @@ CREATE TABLE `bar_orders` (
   `id` int(10) NOT NULL,
   `pickuptime` date NOT NULL,
   `variety` text NOT NULL,
-  `price` int(10) NOT NULL
+  `price` int(10) NOT NULL,
+  `name` text NOT NULL,
+  `mobile` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `bar_orders`
 --
 
-INSERT INTO `bar_orders` (`id`, `pickuptime`, `variety`, `price`) VALUES
-(1, '2024-08-08', '翻糖蛋糕', 1500),
-(2, '2024-08-10', '果汁10杯、咖啡15杯', 2500),
-(3, '2024-07-31', '乳酪蛋糕', 1600),
-(4, '2024-08-30', '手工餅乾50份', 2400),
-(5, '2024-10-10', '杯子蛋糕10個', 800);
+INSERT INTO `bar_orders` (`id`, `pickuptime`, `variety`, `price`, `name`, `mobile`) VALUES
+(1, '2024-08-08', '翻糖蛋糕', 1500, '', ''),
+(2, '2024-08-10', '果汁10杯、咖啡15杯', 2500, '', ''),
+(3, '2024-07-31', '乳酪蛋糕', 1600, '', ''),
+(4, '2024-08-30', '手工餅乾50份', 2400, '', ''),
+(5, '2024-10-10', '杯子蛋糕10個', 800, '', '');
 
 -- --------------------------------------------------------
 
@@ -133,19 +135,34 @@ CREATE TABLE `bar_staffs` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `mobile` text NOT NULL,
-  `ability` text NOT NULL
+  `ability` text NOT NULL,
+  `acc` text NOT NULL,
+  `pw` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 傾印資料表的資料 `bar_staffs`
 --
 
-INSERT INTO `bar_staffs` (`id`, `name`, `mobile`, `ability`) VALUES
-(1, 'Lunna', '0920202020', '杯子蛋糕、咖啡拉花'),
-(2, 'Paul', '0933333333', '乳酪蛋糕、研磨咖啡'),
-(3, 'Fiona', '0978547854', '綜合果汁、水果冰沙'),
-(4, 'Rick', '0905050505', '研發飲品、咖啡拉花'),
-(5, 'Grace', '0998798798', '手工餅乾、杯子蛋糕、翻糖蛋糕');
+INSERT INTO `bar_staffs` (`id`, `name`, `mobile`, `ability`, `acc`, `pw`) VALUES
+(1, 'Lunna', '0920202020', '杯子蛋糕、咖啡拉花', 'staff01', '1111'),
+(2, 'Paul', '0933333333', '乳酪蛋糕、研磨咖啡', 'staff02', '2222'),
+(3, 'Fiona', '0978547854', '綜合果汁、水果冰沙', 'staff03', '3333'),
+(4, 'Rick', '0905050505', '研發飲品、咖啡拉花', 'staff04', '4444'),
+(5, 'Grace', '0998798798', '手工餅乾、杯子蛋糕、翻糖蛋糕', 'staff05', '5555');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `acc` text NOT NULL,
+  `pw` text NOT NULL,
+  `email` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 已傾印資料表的索引

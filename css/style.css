@@ -1,45 +1,47 @@
-*{
-    box-sizing: border-box;
-    /* overflow: hidden; */
+* {
+  box-sizing: border-box;
+  /* overflow: hidden; */
 }
+
 /* nav */
 /* The navigation menu */
-.navbar{
-    /* background-color:rgb(159, 197, 159); */
-    background-color:rgb(198, 226, 189);
+.navbar {
+  /* background-color:rgb(159, 197, 159); */
+  background-color: rgb(198, 226, 189);
 
-  }
-  
- 
-  /* Navigation links */
-  .navbar a {
-    float: left;
-    font-size: 22px;
-    font-weight: bolder;
-    color: rgb(81, 159, 223);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  /* The subnavigation menu */
-  .subnav {
-    float: left;
-    overflow: hidden;
-  }
+}
 
-  .navbar-nav .dropdown-menu{
-    background-color:rgb(198, 226, 189);
-  }
-  
-  /* Add background color to navigation links on hover */
-  .navbar a:hover, .subnav:hover .subnavbtn {
-    background-color:rgba(100, 148, 237, 0.555);
-    color: rgb(32, 54, 177);
-    font-weight: bolder;
-    font-style: italic;
-    /* font-size: large; */
-  }
+
+/* Navigation links */
+.navbar a {
+  float: left;
+  font-size: 22px;
+  font-weight: bolder;
+  color: rgb(81, 159, 223);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The subnavigation menu */
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: rgb(198, 226, 189);
+}
+
+/* Add background color to navigation links on hover */
+.navbar a:hover,
+.subnav:hover .subnavbtn {
+  background-color: rgba(100, 148, 237, 0.555);
+  color: rgb(32, 54, 177);
+  font-weight: bolder;
+  font-style: italic;
+  /* font-size: large; */
+}
 
 /* nav end */
 

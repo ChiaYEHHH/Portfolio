@@ -48,10 +48,10 @@
                     </li>
                     <div class="nav pe-0">
                         <div class="nav-item">
-                            <a class="nav-link" href="login.php"><i class="bi bi-cart4">login</i></a>
+                            <a class="nav-link"><i class="bi bi-cart4"></i></a>
                         </div>
                         <div class="nav-item">
-                            <button type="button" class="btn btn-info" onclick="document.getElementById('id01').style.display='block'">login</button>
+                            <button type="button" class="btn btn-info" onclick="openForm()">login</button>
                         </div>
 
                     </div>
@@ -136,10 +136,10 @@
         </div>
     </footer>
     <!-- login form -->
-    <div id="id01" class="modal">
+    <div id="modal_login" class="modal">
 
         <form class="modal-content animate">
-
+            <h1>Sign Up</h1>
             <div class="container">
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" id="acc" required>
@@ -147,105 +147,50 @@
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" id="pw" required>
 
-                <button type="submit">Login</button>
+                <button onclick="login()" type="button">Login</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="button" onclick="closeForm()" class="cancelbtn">Cancel</button>
                 <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
         </form>
     </div>
 
     <style>
-        /* Full-width input fields */
-        input[type=text],
-        input[type=password] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-
-        /* Set a style for all buttons */
-        button {
-            background-color: #880000;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button:hover {
-            opacity: 0.8;
-        }
-
-        /* Extra styles for the cancel button */
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #f44336;
-        }
-
-        span.psw {
-            float: right;
-            padding-top: 16px;
+        .modal {
+            background-color: rgba(0, 0, 0, 0.4);
         }
 
         /* The Modal (background) */
-        .modal {
+        #modal_Login {
             display: none;
             /* Hidden by default */
             position: fixed;
+            justify-content: center;
+            align-items: center;
             /* Stay in place */
-            z-index: 1;
+            overflow: hidden;
+            z-index: 10;
             /* Sit on top */
-            left: 0;
-            top: 0;
             width: 100%;
             /* Full width */
             height: 100%;
             /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
             padding-top: 60px;
         }
 
         /* Modal Content/Box */
         .modal-content {
             background-color: #fefefe;
-            margin: 25% auto 15% auto;
-            /* 5% from the top, 15% from the bottom and centered */
+            margin: 12% auto 15% auto;
             border: 1px solid #888;
-            width: 80%;
-            /* Could be more or less, depending on screen size */
-        }
-
-        /* The Close Button (x) */
-        .close {
-            position: absolute;
-            right: 25px;
-            top: 0;
-            color: #000;
-            font-size: 35px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: red;
-            cursor: pointer;
+            width: 60%;
+            position: relative;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
         }
 
         /* Add Zoom Animation */
@@ -285,11 +230,60 @@
                 width: 100%;
             }
         }
+
+
+
+        /* Full-width input fields */
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        button {
+            background-color: rgb(198, 226, 189);
+            ;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
     </style>
 </body>
 
 </html>
 <script>
+    function openForm() {
+        document.getElementById("modal_login").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("modal_login").style.display = "none";
+    }
+
     function login() {
         $.post("./api/chk_login.php", {
             acc: $('#acc').val(),
