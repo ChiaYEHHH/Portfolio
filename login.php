@@ -27,6 +27,23 @@
         background-size: cover;
         background-position: center;*/
     }
+
+    /* The popup form - hidden by default */
+    .form-popup {
+        display: none;
+        position: fixed;
+        bottom: 50%;
+        left: 50%;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+        max-width: 500px;
+        padding: 10px;
+        background-color: white;
+    }
 </style>
 
 <body>
@@ -65,6 +82,9 @@
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link" href="./front/login.php"><i class="bi bi-cart4"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-info open-button" onclick="openForm()">Open Form</button>
                         </li>
                     </ul>
 
@@ -120,7 +140,7 @@
 
                     <div class="form-floating">
                         <input type="password" class="form-control" name="floatingPassword" id="pw">
-                        <label for="floatingPassword">Password</label>
+                        <label for="floatingPassword">Password12645</label>
                     </div>
                     <div class="checkbox mt-2 mb-3">
                         <label><input type="checkbox">Remember</label>
@@ -133,6 +153,30 @@
         </div>
     </div>
     <!-- login end -->
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>Login</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
 
     <!-- footer -->
     <footer class="navbar navbar-expand-lg mt-3">
@@ -158,7 +202,7 @@
                 alert("登入成功")
                 location.href = "admin.php";
             } else {
-                alert("帳號密碼錯誤")
+                alert("帳號密碼錯誤");
                 location.reload();
             }
         })
