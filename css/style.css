@@ -45,3 +45,12 @@
 
 /* nav end */
 
+.CartBox{
+  z-index: 15;
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  background-color: brown;
+  right: 350px;
+  top: 900px;
+}

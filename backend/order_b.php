@@ -26,7 +26,7 @@
 
 <div class="row text-center">
     <?php
-    $order = $Order->all();
+    $order = $Orders->all();
     foreach ($order as $key => $value) :
     ?>
         <div class='col-1'><?= $value['id']; ?></div>

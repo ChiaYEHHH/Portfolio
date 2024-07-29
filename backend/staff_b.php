@@ -22,7 +22,7 @@
     </div>
     <!-- sql -->
     <?php
-    $staff = $Staff->all();
+    $staff = $Staffs->all();
     foreach ($staff as $key => $value) :
     ?>
         <div class='row text-center'>
