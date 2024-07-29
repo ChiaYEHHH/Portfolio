@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-07-26 10:20:04
+-- 產生時間： 2024-07-29 14:04:56
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -24,15 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `bar_creative`
+-- 資料表結構 `bar_creatives`
 --
 
-CREATE TABLE `bar_creative` (
+CREATE TABLE `bar_creatives` (
   `id` int(10) NOT NULL,
   `drinksname` text NOT NULL,
   `details` text NOT NULL,
-  `contributor` text NOT NULL
+  `contributor` text NOT NULL,
+  `mobile` text NOT NULL,
+  `updated` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `bar_creatives`
+--
+
+INSERT INTO `bar_creatives` (`id`, `drinksname`, `details`, `contributor`, `mobile`, `updated`) VALUES
+(1, '優質美研', '美研社+無糖優酪乳', 'Chia', '0988888888', '2024-07-29');
 
 -- --------------------------------------------------------
 
@@ -169,9 +178,9 @@ CREATE TABLE `users` (
 --
 
 --
--- 資料表索引 `bar_creative`
+-- 資料表索引 `bar_creatives`
 --
-ALTER TABLE `bar_creative`
+ALTER TABLE `bar_creatives`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -209,10 +218,10 @@ ALTER TABLE `bar_staffs`
 --
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `bar_creative`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `bar_creatives`
 --
-ALTER TABLE `bar_creative`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `bar_creatives`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `bar_logos`

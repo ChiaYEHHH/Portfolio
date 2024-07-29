@@ -11,19 +11,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>DRINK BAR</title>
+    <style>
+
+    </style>
 </head>
 
 <body>
     <!-- nav -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <!-- logo -->
-            <a class="navbar-brand" href="#">DrinkBar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0">
+            <!-- logo -->
+            <a class="navbar-brand inline" href="#">DrinkBar</a>
+            <div class="collapse navbar-collapse inline" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="index.php">Home</a>
                     </li>
@@ -46,21 +49,19 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="?do=creative">Creative</a>
                     </li>
-                    <div class="nav pe-0">
-                        <div class="nav-item">
-                            <a class="nav-link"><i class="bi bi-cart4"></i></a>
-                        </div>
-                        <div class="nav-item">
-                            <button type="button" class="btn btn-info" onclick="openForm()">login</button>
-                        </div>
-
-                    </div>
-
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page"><i class="bi bi-cart4"></i></a>
+                    </li>
 
                 </ul>
             </div>
+            <div class="nav-item me-0">
+                <button type="button" class="btn btn-info inline" aria-current="page" onclick="openForm()">login</button>
+            </div>
         </div>
+
     </nav>
+    <!-- nav end -->
     <!-- 旋轉圖片 -->
     <div class="container">
 
@@ -91,6 +92,7 @@
             </button>
         </div>
     </div>
+    <!-- 旋轉圖片end -->
     <!-- news -->
     <div class="container mt-3" id="news">
         <div class="row justify-content-around">
@@ -137,7 +139,6 @@
     </footer>
     <!-- login form -->
     <div id="modal_login" class="modal">
-
         <form class="modal-content animate">
             <h1>Sign Up</h1>
             <div class="container">

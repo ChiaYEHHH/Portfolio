@@ -1,3 +1,4 @@
+<label class="input-group-text mb-3 ">員工</label>
 <div class="container text-center">
     <div class="row justify-content-center">
         <div class="col-3 bg-info">
@@ -16,21 +17,25 @@
             密碼
         </div>
         <div class="col-1 bg-success">
-            編輯
+        刪除/編輯
         </div>
     </div>
     <!-- sql -->
     <?php
-        $staff = $Staff->all();
-        foreach ($staff as $key => $value) {
-            echo "<div class='row text-center'>";
-            echo "<div class='col-3'>{$value['name']}</div>";
-            echo "<div class='col-3'>{$value['mobile']}</div>";
-            echo "<div class='col-3'>{$value['ability']}</div>";
-            echo "<div class='col-1'>{$value['acc']}</div>";
-            echo "<div class='col-1'>{$value['pw']}</div>";
-            echo "<div class='col-1'><input type='checkbox' name='del' id='{$value['id']}'><button type='button'>編輯</button></div>";
-            echo "</div>";
-        }
-        ?>
+    $staff = $Staff->all();
+    foreach ($staff as $key => $value) :
+    ?>
+        <div class='row text-center'>
+            <div class="col-3"><?= $value['name'] ?></div>
+            <div class="col-3"><?= $value['mobile'] ?></div>
+            <div class="col-3"><?= $value['ability'] ?></div>
+            <div class="col-1"><?= $value['acc'] ?></div>
+            <div class="col-1"><?= $value['pw'] ?></div>
+            <div class="col-1">
+                <input type="checkbox" name="del" id="<?= $value['id']; ?>">
+                <button class="btn btn-sm btn-danger" type="button">編輯</button>
+            </div>
+        </div>
+
+    <?php endforeach; ?>
 </div>

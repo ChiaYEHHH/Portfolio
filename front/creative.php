@@ -11,21 +11,26 @@
     公布名單時間：9月10日。<br>
     讓我們一起創造更多美味和驚喜，期待你的精彩創意！
 </h4>
-<form action="../api/get_creative.php" method="post">
+<form action="./api/save_Creatives.php" method="post" enctype="multipart/form-data">
     <div class="mb-3">
+
         <label for="creative" class="form-label">創意飲品名稱</label>
-        <input type="text" class="form-control" id="creative" placeholder="創意名稱">
+        <input type="text" class="form-control" name="drinksname" id="creative" placeholder="創意名稱" required>
     </div>
     <div class="mb-3">
         <label for="creativeDetail" class="form-label">創意飲品秘密配方</label>
-        <textarea class="form-control" id="creativeDetail" rows="3"></textarea>
+        <textarea class="form-control" name="details" id="creativeDetail" rows="3" required></textarea>
     </div>
     <div class="row">
         <div class="col">
-            <input type="text" class="form-control" placeholder="Creator Name" aria-label="Creator Name">
+            <input type="text" class="form-control" name="contributor" placeholder="Creator Name" aria-label="Creator Name" required>
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="Phone Number" aria-label="Phone Number">
+            <input type="text" class="form-control" name="mobile" placeholder="Phone Number" aria-label="Phone Number" required>
+        </div>
+        <div>
+            <input type="hidden" name='updated' value="<?= date('Y-m-d'); ?>">
+            
         </div>
     </div>
     <div class="text-center m-3">
