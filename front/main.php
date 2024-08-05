@@ -16,29 +16,36 @@
         opacity: 0.6;
         font-weight: bold;
     }
+
+    .card img {
+        width: 100%;
+        /* 或設置固定寬度 */
+        aspect-ratio: 1 / 1;
+        /*  */
+    }
 </style>
 
 <!-- 卡片 菜單 -->
 <div class="row justify-content-around mt-3">
     <?php
-    $sale = $Sales->all();
+    $sale = q("select * from `bar_sales` ORDER BY `variety` desc, `pic`");
     foreach ($sale as $key => $value) :
     ?>
         <div class="col-sm-12 col-md-6 col-lg-3 mt-3">
-            <div class="card">
-                <img src="./images/<?=$value['pic'];?>" class="card-img-top" alt="...">
+            <div class="card" id="<?= $value['variety']; ?>">
+                <img src="./images/<?= $value['pic']; ?>" class="img-fluid card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"><?=$value['title'];?></h5>
+                    <h5 class="card-title"><?= $value['title']; ?></h5>
                     <p class="card-text">
-                        Price:<?=$value['price'];?>
+                        Price:<?= $value['price']; ?>
                     </p>
                     <p><button class="btn btn-info">Add Cart</button></p>
                 </div>
             </div>
         </div>
     <?php endforeach; ?>
-    
+
 </div>
 <div class="CartBox">
-<button type="button">Cart</button>
+    <button type="button">Cart</button>
 </div>
