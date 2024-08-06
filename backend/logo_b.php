@@ -98,29 +98,31 @@
 
     function upload() {
         // console.log($('#imgFile'));
-        var formData = new FormData();
+        // var formData = new FormData();
         // 获取文件对象并附加到FormData对象中
         var file = $('#imgFile')[0].files[0];
-        formData.append('img', file);
+        var formData = new FormData();
+    formData.append('img', file);
+        // formData.append('img', file);
         // console.log('file',file);
         // console.log('formData',formData);
 
 
         // 通过Ajax发送POST请求
         $.ajax({
-            url: '../api/upload.php', // 后端处理文件上传的API地址
+            url: './api/upload.php', // 后端处理文件上传的API地址
             type: 'POST',
-            data: file,
+            data: formData,
             contentType: false,
             processData: false,
-            success: function(response) {
+            success: function(res) {
                 // 请求成功后的回调函数
-                console.log('文件上传成功');
-                console.log(response);
-            },
-            error: function(xhr, status, error) {
-                // 请求失败后的回调函数
-                console.error('文件上传失败', error);
+                // console.log('文件上传成功');
+                console.log(res);
+                // },
+                // error: function(xhr, status, error) {
+                //     // 请求失败后的回调函数
+                //     console.error('文件上传失败', error);
             }
         });
     }

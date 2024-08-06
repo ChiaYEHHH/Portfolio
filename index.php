@@ -26,7 +26,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- logo -->
-            
+
             <img class="navbar-brand inline img-fluid" width="280px" src="./images/logo/logo09.png" alt="" srcset="">
             <div class="collapse navbar-collapse inline" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
@@ -137,145 +137,37 @@
             <span class="navbar-item">
                 DrinkBar designer ChiaYEH
             </span>
+            <span class="navbar-item">
+                datasource:Pinterest.com/Freepik.com/Design.com
+            </span>
 
         </div>
     </footer>
     <!-- login form -->
     <div id="modal_login" class="modal">
-        <form class="modal-content animate">
-            <h1>Sign Up</h1>
+        <form class="modal-form animate">
             <div class="container">
+                <h1>Sign Up</h1>
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" id="acc" required>
 
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" id="pw" required>
-
-                <button onclick="login()" type="button">Login</button>
-                <label>
+                <!-- <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
+                </label> -->
+                <button onclick="login()" class="mt-2 mb-2" type="button">Login</button>
+
+                <button type="button" onclick="closeForm()" class="cancelbtn">Cancel</button>
+                <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
             </div>
 
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="closeForm()" class="cancelbtn">Cancel</button>
-                <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
+            <!-- <div class="container">
+                
+            </div> -->
         </form>
     </div>
 
-    <style>
-        .modal {
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        /* The Modal (background) */
-        #modal_Login {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            justify-content: center;
-            align-items: center;
-            /* Stay in place */
-            overflow: hidden;
-            z-index: 10;
-            /* Sit on top */
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            padding-top: 60px;
-        }
-
-        /* Modal Content/Box */
-        .modal-content {
-            background-color: #fefefe;
-            margin: 12% auto 15% auto;
-            border: 1px solid #888;
-            width: 60%;
-            position: relative;
-            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Add Zoom Animation */
-        .animate {
-            -webkit-animation: animatezoom 0.6s;
-            animation: animatezoom 0.6s
-        }
-
-        @-webkit-keyframes animatezoom {
-            from {
-                -webkit-transform: scale(0)
-            }
-
-            to {
-                -webkit-transform: scale(1)
-            }
-        }
-
-        @keyframes animatezoom {
-            from {
-                transform: scale(0)
-            }
-
-            to {
-                transform: scale(1)
-            }
-        }
-
-        /* Change styles for span and cancel button on extra small screens */
-        @media screen and (max-width: 300px) {
-            span.psw {
-                display: block;
-                float: none;
-            }
-
-            .cancelbtn {
-                width: 100%;
-            }
-        }
-
-
-
-        /* Full-width input fields */
-        input[type=text],
-        input[type=password] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-
-        /* Set a style for all buttons */
-        button {
-            background-color: rgb(198, 226, 189);
-            ;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button:hover {
-            opacity: 0.8;
-        }
-
-        /* Extra styles for the cancel button */
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #f44336;
-        }
-
-        span.psw {
-            float: right;
-            padding-top: 16px;
-        }
-    </style>
 </body>
 
 </html>
