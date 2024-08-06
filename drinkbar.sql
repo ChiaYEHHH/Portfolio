@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-07-29 14:04:56
+-- 產生時間： 2024-08-06 10:04:21
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -54,6 +54,17 @@ CREATE TABLE `bar_logos` (
   `img` text NOT NULL,
   `sh` int(1) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `bar_logos`
+--
+
+INSERT INTO `bar_logos` (`id`, `img`, `sh`) VALUES
+(1, 'logo07.png', 1),
+(2, 'logo08.png', 0),
+(3, 'logo09.png', 0),
+(4, 'logo06.png', 0),
+(5, 'logo03.png', 0);
 
 -- --------------------------------------------------------
 
@@ -132,7 +143,14 @@ INSERT INTO `bar_sales` (`id`, `title`, `pic`, `price`, `variety`, `sh`) VALUES
 (4, '梨檸莓', 'drink4.jpg', 90, 'drink', 1),
 (5, '啵啵澄棒', 'drink5.jpg', 80, 'drink', 1),
 (6, '檸有冰', 'drink6.jpg', 250, 'drink', 1),
-(7, '紗冰', 'drink7.jpg', 87, 'drink', 1);
+(7, '紗冰', 'drink7.jpg', 87, 'drink', 1),
+(8, '布朗尼杯杯', 'cupcake01.jpg', 120, 'cake', 1),
+(9, '焦蕉杯杯', 'cupcake02.jpg', 130, 'cake', 1),
+(10, '抹茶杯杯', 'cupcake03.jpg', 115, 'cake', 1),
+(11, '藍盆友', 'pancake01.jpg', 150, 'cake', 1),
+(12, '蛙蛙圈套', 'donus01.jpg', 99, 'cake', 1),
+(13, '莓夢橙真', 'drink8.jpg', 120, 'drink', 1),
+(14, '藍還紫', 'cupcake04.jpg', 110, 'cake', 1);
 
 -- --------------------------------------------------------
 
@@ -178,12 +196,6 @@ CREATE TABLE `users` (
 --
 
 --
--- 資料表索引 `bar_creatives`
---
-ALTER TABLE `bar_creatives`
-  ADD PRIMARY KEY (`id`);
-
---
 -- 資料表索引 `bar_logos`
 --
 ALTER TABLE `bar_logos`
@@ -218,16 +230,10 @@ ALTER TABLE `bar_staffs`
 --
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `bar_creatives`
---
-ALTER TABLE `bar_creatives`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- 使用資料表自動遞增(AUTO_INCREMENT) `bar_logos`
 --
 ALTER TABLE `bar_logos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `bar_news`
@@ -245,7 +251,7 @@ ALTER TABLE `bar_orders`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `bar_sales`
 --
 ALTER TABLE `bar_sales`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `bar_staffs`
