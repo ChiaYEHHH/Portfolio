@@ -13,6 +13,7 @@ if ($_SESSION['login'] != 1) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
     <title>DRINK BAR 後台</title>
 </head>
 
@@ -24,7 +25,7 @@ if ($_SESSION['login'] != 1) {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- logo -->
-            <a class="navbar-brand inline" href="#">DrinkBar</a>
+            <img class="navbar-brand inline img-fluid" width="280px" src="./images/logo/logo09.png" alt="" srcset="">
             <div class="collapse navbar-collapse inline" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
                     <li class="nav-item">
@@ -49,13 +50,13 @@ if ($_SESSION['login'] != 1) {
                 </ul>
             </div>
             <div class="nav-item me-0">
-                <button type="button" class="btn btn-info inline" aria-current="page"><a href="./api/logout.php">logout</a></button>
+                <a type="button" class="btn btn-info inline" href="./api/logout.php" aria-current="page">Logout</a>
             </div>
         </div>
 
     </nav>
     <!-- nav end -->
-    
+
     <!-- content -->
     <div class="container text-center">
         <?php

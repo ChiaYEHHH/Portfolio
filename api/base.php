@@ -140,4 +140,5 @@ $Orders = new DB('bar_orders');
 $Staffs = new DB('bar_staffs');
 $Logos = new DB('bar_logos');
 $Sales = new DB('bar_sales');
+$Logos = new DB('bar_logos');
 

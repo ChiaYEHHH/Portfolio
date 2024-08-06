@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css">
     <title>DRINK BAR</title>
     <style>
 
@@ -25,7 +27,7 @@
             </button>
             <!-- logo -->
             
-            <img class="navbar-brand inline img-fluid" width="280px" src="./images/logo09.png" alt="" srcset="">
+            <img class="navbar-brand inline img-fluid" width="280px" src="./images/logo/logo09.png" alt="" srcset="">
             <div class="collapse navbar-collapse inline" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
                     <li class="nav-item">
@@ -57,7 +59,7 @@
                 </ul>
             </div>
             <div class="nav-item me-0">
-                <button type="button" class="btn btn-info inline" aria-current="page" onclick="openForm()">login</button>
+                <button type="button" class="btn btn-info inline" aria-current="page" onclick="openForm()">Login</button>
             </div>
         </div>
 
