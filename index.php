@@ -26,8 +26,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- logo -->
-
-            <img class="navbar-brand inline img-fluid" width="280px" src="./images/logo/logo09.png" alt="" srcset="">
+            <?php
+            $logos = $Logos->all(['sh' => 1]);
+            ?>
+            <img class="navbar-brand inline img-fluid" width="280px" src="./logo/<?= $logos[0]['img'] ?>" alt="" srcset="">
             <div class="collapse navbar-collapse inline" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
                     <li class="nav-item">

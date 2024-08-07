@@ -22,7 +22,7 @@
         <div class='row text-center'>
             <div class='col-3'><?= $value['drinksname']; ?></div>
             <div class='col-5'><?= $value['details']; ?></div>
-            <div class='col-2'><?= $value['contributor'] . $value['mobile']; ?></div>
+            <div class='col-2'><?= $value['contributor'];?> / <?= $value['mobile']; ?></div>
             <div class='col-2'><?= $value['updated']; ?></div>
 
         </div>

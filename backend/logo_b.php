@@ -44,14 +44,14 @@
     <?php endforeach; ?>
 </div>
 
-<form class=" mt-5">
+<form class=" mt-5" action="./api/upload.php" method="post" enctype="multipart/form-data">
     <h2>LOGO</h2>
     <!-- <label class="input-group-text mb-3">logo</label> -->
     <hr>
     <div class='row mt-3 justify-content-end'>
-        <div>上傳LOGO圖片：<input class="mb-3 bg-secondary" type="file" name="img" id="imgFile"></div>
+    <div>上傳LOGO圖片：<input class="mb-3 bg-secondary" type="file" name="img" id="imgFile"></div>
         <div>
-            <button id="uploadBtn" class="btn btn-primary" type="button" onclick="upload()">新增</button>
+            <button id="uploadBt" class="btn btn-primary" type="submit">新增</button>
             <button class="btn btn-danger" type="reset">清除</button>
         </div>
         <!-- <div class="col-2">
@@ -61,7 +61,7 @@
 </form>
 <form>
     <div class='row mt-3'>
-        <table class="table table-success text-center">
+        <table class="table table-hover text-center">
             <thead>
                 <tr>
                     <th class="p-3" width="60%">LOGO img</th>
@@ -75,7 +75,7 @@
                 foreach ($logos as $key => $value) :
                 ?>
                     <tr style="vertical-align: middle; text-align: center;">
-                        <td><img src="./images/logo/<?= $value['img']; ?>" style='height: 60px;'></td>
+                        <td><img src="./logo/<?= $value['img']; ?>" style='height: 60px;'></td>
                         <td><input type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($value['sh'] == 1) ? "checked" : ""; ?>></td>
                         <td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
                     </tr>
@@ -121,7 +121,6 @@
                 console.log(res);
                 // },
                 // error: function(xhr, status, error) {
-                //     // 请求失败后的回调函数
                 //     console.error('文件上传失败', error);
             }
         });

@@ -25,14 +25,21 @@ if ($_SESSION['login'] != 1) {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- logo -->
-            <img class="navbar-brand inline img-fluid" width="280px" src="./images/logo/logo09.png" alt="" srcset="">
+            <?php
+                $logos = $Logos->all(['sh' => 1]);
+                // foreach ($logos as $key => $value) :
+                ?>
+            <img class="navbar-brand inline img-fluid" width="280px" src="./logo/<?=$logos[0]['img'] ?>" alt="" srcset="">
             <div class="collapse navbar-collapse inline" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link" aria-current="page" href="admin.php">Manage</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="?do=news_b">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="?do=logo_b">Logos</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

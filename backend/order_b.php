@@ -36,10 +36,9 @@
         <div class='col-2'><?= $value['name']; ?></div>
         <div class='col-2'><?= $value['mobile']; ?></div>
         <div class='col-1'>
-            <input type='checkbox' name='del' id='<?= $value[' id']; ?>'>
-            <button class="btn btn-sm btn-danger" type='button'>編輯</button></div>
-
-
+            <button class="btn btn-sm btn-primary" type='button'>編輯</button>
+            <button class="btn btn-sm btn-danger" type='button'>刪除</button>
+        </div>
     <?php endforeach; ?>
 
 </div>
