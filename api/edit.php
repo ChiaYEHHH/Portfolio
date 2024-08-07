@@ -28,6 +28,7 @@ foreach ($_POST['id'] as $key => $id) {
                 $row['text'] = $_POST['text'][$key];
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
                 break;
+            case 'logos':
             case 'image':
             case 'mvim':
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
@@ -36,4 +37,4 @@ foreach ($_POST['id'] as $key => $id) {
         $db->save($row);
     }
 }
-to("../admin.php?do=$do");
+to("../admin.php");
