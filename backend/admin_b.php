@@ -69,26 +69,18 @@
 <!-- 最新消息 -->
 <div class="row justify-content-center mt-5">
     <label class="input-group-text mb-3 justify-content-center">最新消息</label>
-    <a class="btn btn-info" href="?do=news_b">編輯</a>
-    <table class="table table-hover mt-3 text-center">
-        <thead>
-            <tr>
-                <td width="30%">標題</td>
-                <td width="70%">內容</td>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $news = $News->all(['sh' => 1]);
-            foreach ($news as $key => $value) :
-            ?>
-                <tr>
-                    <td><?= $value['title'] ?></td>
-                    <td class="text-start"><?= $value['article'] ?></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+    <a class="btn btn-info mb-4" href="?do=news_b">編輯</a>
+    <?php
+    $news = $News->all(['sh' => 1]);
+    foreach ($news as $n) :
+    ?>
+        <div class='col-3 card overflow-hidden' style='height: 160px;'>
+            <h5 class='card-title text-center' style='color:rgb(66, 170, 153);font-weight:bold;'><?= $n['title']; ?></h5>
+            <div class='card-text'>
+                <p><?= $n['article']; ?></p>
+            </div>
+        </div>
+    <?php endforeach; ?>
 </div>
 
 <!-- 員工 -->

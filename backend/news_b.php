@@ -1,35 +1,4 @@
-<!-- sql -->
- <!-- 旋轉圖片 -->
- <div class="container">
-
-<div id="carousel" class="carousel slide mt-3" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
-        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="./images/course3.jpg" class="d-block w-100 carousel_Img img-fluid" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="./images/course2.jpg" class="d-block w-100 carousel_Img img-fluid" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="./images/course1.jpg" class="d-block w-100 carousel_Img img-fluid" alt="...">
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-</div>
-<!-- 旋轉圖片end -->
+<!-- 首頁方塊 -->
 <div class="row mt-3 justify-content-around">
     <?php
     $news = $News->all(['sh' => 1]);
@@ -43,14 +12,58 @@
         </div>
     <?php endforeach; ?>
 </div>
+
 <div class='row mt-3'>
-    <?php
-    $news = $News->all();
-    foreach ($news as $key => $value) :
-        ?>
-        <div class="col-1 align-content-center"><?=$value['id'];?></div>
-        <div class="col-2 align-content-center" style='color:rgb(66, 170, 153);font-weight:bold;'><?=$value['title'];?></div>
-        <div class="col-8 align-content-center text-start"><?=$value['article'];?></div>
-        <div class="col-1 align-content-center"><?=$value['sh'];?></div>
-    <?php endforeach; ?>
+    <form action="./api/save.php" method="post" enctype="multipart/form-data">
+        <table class="table table-hover mt-3 text-center">
+            <thead>
+                <tr>
+                    <td width="20%">標題</td>
+                    <td width="60%">內容</td>
+                    <td width="10%">顯示</td>
+                    <td width="10%">刪除</td>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $news = $News->all();
+                foreach ($news as $key => $value) :
+                ?>
+                    <tr>
+                        <td style='color:rgb(66, 170, 153);font-weight:bold;'><?= $value['title'] ?></td>
+                        <td class="text-start"><?= $value['article'] ?></td>
+                        <td><input type="checkbox" name="sh[]" value="<?= $value['id']; ?>" <?= ($value['sh'] == 1) ? "checked" : ""; ?>></td>
+                        <td><input type="checkbox" name="del[]" value="<?= $value['id']; ?>"></td>
+                    </tr>
+                    <input type="hidden" name="id[]" value="<?= $value['id']; ?>">
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        <div>
+            <input type="hidden" name="table" value="logos">
+            <button class="btn btn-primary" type="submit">修改</button>
+            <button class="btn btn-danger" type="reset">重置</button>
+        </div>
+    </form>
+</div>
+<br>
+<hr class="mt-5">
+<form action="./api/save.php" method="post" enctype="multipart/form-data">
+    <div class="mt-3">
+        <label for="newsTitle" class="form-label">最新消息標題</label>
+        <input type="text" class="form-control" name="title" id="newsTitle" placeholder="標題" required>
+    </div>
+    <div class="mb-3">
+        <label for="article" class="form-label">消息內容</label>
+        <textarea class="form-control" name="article" id="article" rows="3" placeholder="內容" required></textarea>
+    </div>
+    </div>
+    <div class="text-center">
+        <input type="hidden" name="table" value="news">
+        <!-- <input type="hidden" name="sh" value="0"> -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-danger">Reset</button>
+    </div>
+
+</form>
 </div>

@@ -22,7 +22,12 @@
                         <td><?= $value['mobile'] ?></td>
                         <td><?= $value['ability'] ?></td>
                         <td><?= $value['acc'] ?></td>
-                        <td><?= $value['pw'] ?></td>
+                        <td><?= str_repeat("*",mb_strlen($value['pw'])); ?></td>
+                        <td>
+                            <?php
+                            if($value['acc'])
+                        ?>
+                            </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

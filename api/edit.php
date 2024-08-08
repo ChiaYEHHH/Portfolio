@@ -3,7 +3,7 @@ include_once "base.php";
 $do = $_POST['table'];
 $db = ${ucfirst($do)};
 // $$_POST['id']=$_POST['sh'];
-dd($_POST);
+// dd($_POST);
 // echo $id;
 // dd($_POST['del']);
 
