@@ -44,14 +44,14 @@
                 ?>
                     <tr style="vertical-align: middle; text-align: center;">
                         <td><img src="./logo/<?= $value['img']; ?>" style='height: 60px;' name='img'></td>
-                        <td><input type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($value['sh'] == 1) ? "checked" : ""; ?>></td>
-                        <td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
+                        <td><input type="radio" name="sh" value="<?= $value['id']; ?>" <?= ($value['sh'] == 1) ? "checked" : ""; ?>></td>
+                        <td><input type="checkbox" name="del[]" value="<?= $value['id']; ?>"></td>
                     </tr>
+                    <input type="hidden" name="id[]" value="<?= $value['id']; ?>">
                 <?php endforeach; ?>
             </tbody>
         </table>
         <div>
-            <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
             <input type="hidden" name="table" value="logos">
             <button class="btn btn-primary" type="submit">修改</button>
             <button class="btn btn-danger" type="reset">重置</button>

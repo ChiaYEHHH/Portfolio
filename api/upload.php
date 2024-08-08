@@ -13,4 +13,4 @@ if (!empty($_FILES['img']['tmp_name'])) {
 // $_POST['img']->save($_POST);
 $Logos->save($_POST);
 // dd($_POST);
-// to("../admin.php?do=logo_b");
+to("../admin.php?do=logo_b");

@@ -2,6 +2,21 @@
 include_once "base.php";
 $do = $_POST['table'];
 $db = ${ucfirst($do)};
+// $$_POST['id']=$_POST['sh'];
+dd($_POST);
+// echo $id;
+// dd($_POST['del']);
+
+// foreach ($_POST['del'] as $key => $id) {
+// echo "$key,$id";
+// dd($id);
+// $db->del($id);
+// }
+
+
+if (!empty($_POST['del']) && in_array($id, $_POST['del'])) {
+    $db->del($id);
+}
 
 foreach ($_POST['id'] as $key => $id) {
     if (!empty($_POST['del']) && in_array($id, $_POST['del'])) {
@@ -28,13 +43,16 @@ foreach ($_POST['id'] as $key => $id) {
                 $row['text'] = $_POST['text'][$key];
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
                 break;
-            case 'logos':
             case 'image':
             case 'mvim':
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
+                break;
+            case 'logos':
+                $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $id) ? 1 : 0;
+                break;
         }
 
         $db->save($row);
     }
 }
-to("../admin.php");
+to("../admin.php?do=logo_b");
