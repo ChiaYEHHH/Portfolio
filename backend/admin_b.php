@@ -1,17 +1,7 @@
-<!-- LOGO -->
-<div class="row justify-content-center mt-5">
-    <label class="input-group-text mb-3 justify-content-center">LOGO</label>
-    <a class="btn btn-info" href="?do=logo_b">編輯</a>
-    
-    <img class=" mt-3" src="./logo/<?= $logos[0]['img'] ?>" style='width: 300px;'>
-
-
-</div>
-
 <!-- 訂單 -->
 <div class="row justify-content-center mt-5">
     <label class="input-group-text mb-3 justify-content-center">訂單</label>
-    <a class="btn btn-info" href="?do=order_b">編輯</a>
+    <!-- <a class="btn btn-info" href="?do=order_b">編輯</a> -->
     <table class="table table-hover mt-3 text-center">
         <thead>
             <tr>
@@ -40,7 +30,7 @@
 <!-- 創意投稿 -->
 <div class="row justify-content-center mt-5">
     <label class="input-group-text mb-3 justify-content-center">創意投稿</label>
-    <a class="btn btn-info" href="?do=creative_b">編輯</a>
+    <!-- <a class="btn btn-info" href="?do=creative_b">編輯</a> -->
     <table class="table table-hover mt-3 text-center">
         <thead>
             <tr>
@@ -66,22 +56,38 @@
     </table>
 </div>
 
+<!-- LOGO -->
+<div class="row justify-content-center mt-5">
+    <label class="input-group-text mb-3 justify-content-center">LOGO</label>
+    <a class="btn btn-info" href="?do=logo_b">編輯</a>
+
+    <img class=" mt-3" src="./logo/<?= $logos[0]['img'] ?>" style='width: 300px;'>
+
+
+</div>
+
+
 <!-- 最新消息 -->
 <div class="row justify-content-center mt-5">
     <label class="input-group-text mb-3 justify-content-center">最新消息</label>
     <a class="btn btn-info mb-4" href="?do=news_b">編輯</a>
-    <?php
-    $news = $News->all(['sh' => 1]);
-    foreach ($news as $n) :
-    ?>
-        <div class='col-3 card overflow-hidden' style='height: 160px;'>
-            <h5 class='card-title text-center' style='color:rgb(66, 170, 153);font-weight:bold;'><?= $n['title']; ?></h5>
-            <div class='card-text'>
-                <p><?= $n['article']; ?></p>
+    <div class="row mt-3 justify-content-around">
+        <?php
+        $news = $News->all(['sh' => 1]);
+        foreach ($news as $n) :
+        ?>
+            <div class="col p-2">
+                <div class='card overflow-hidden p-2' style='height: 160px;'>
+                    <h5 class='card-title text-center' style='color:rgb(66, 170, 153);font-weight:bold;'><?= $n['title']; ?></h5>
+                    <div class='card-text'>
+                        <p><?= $n['article']; ?></p>
+                    </div>
+                </div>
             </div>
-        </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+    </div>
 </div>
+
 
 <!-- 員工 -->
 <div class="row justify-content-center mt-5">
@@ -107,7 +113,7 @@
                     <td><?= $value['mobile'] ?></td>
                     <td><?= $value['ability'] ?></td>
                     <td><?= $value['acc'] ?></td>
-                    <td><?= $value['pw'] ?></td>
+                    <td><?= str_repeat("*",mb_strlen($value['pw'])); ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

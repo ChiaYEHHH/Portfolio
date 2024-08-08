@@ -6,4 +6,15 @@ $db = ${ucfirst($do)};
 unset($_POST['table']);
 
 $db->save($_POST);
-to("../admin.php");
+
+switch ($do) {
+    case 'orders':
+    case 'creatives':
+        to("../index.php");
+        break;
+
+    case 'news':
+    case 'staffs':
+        to("../admin.php");
+        break;
+}

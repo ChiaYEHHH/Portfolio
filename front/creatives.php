@@ -11,7 +11,7 @@
     公布名單時間：9月10日。<br>
     讓我們一起創造更多美味和驚喜，期待你的精彩創意！
 </h4>
-<form action="./api/save_Creatives.php" method="post" enctype="multipart/form-data">
+<form action="./api/save.php" method="post" enctype="multipart/form-data">
     <div class="mb-3">
 
         <label for="creative" class="form-label">創意飲品名稱</label>
@@ -30,6 +30,7 @@
         </div>
         <div>
             <input type="hidden" name='updated' value="<?= date('Y-m-d'); ?>">
+            <input type="hidden" name='table' value="creatives">
             
         </div>
     </div>

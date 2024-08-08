@@ -26,12 +26,14 @@ if ($_SESSION['login'] != 1) {
             </button>
             <!-- logo -->
             <?php
-                $logos = $Logos->all(['sh' => 1]);
-                // foreach ($logos as $key => $value) :
-                ?>
-            <img class="navbar-brand inline img-fluid" width="280px" src="./logo/<?=$logos[0]['img'] ?>" alt="" srcset="">
+            $logos = $Logos->all(['sh' => 1]);
+            ?>
+            <a href="index.php"><img class="navbar-brand inline img-fluid" width="280px" src="./logo/<?= $logos[0]['img'] ?>" alt="" srcset=""></a>
             <div class="collapse navbar-collapse inline" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="admin.php">Manage</a>
                     </li>
@@ -40,19 +42,6 @@ if ($_SESSION['login'] != 1) {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="?do=logo_b">Logos</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            下拉選單
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">飲料</a></li>
-                            <li><a class="dropdown-item" href="#">蛋糕</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">預約特製</a></li>
-                        </ul>
                     </li>
                 </ul>
             </div>
@@ -83,9 +72,12 @@ if ($_SESSION['login'] != 1) {
     <!-- footer -->
     <footer class="navbar navbar-expand-lg mt-3">
         <div class="container">
-            <div class="navbar-brand">Drinkbar</div>
-            <span class="navbar-text">
+            <a class="navbar-brand" href="#">DrinkBar</a>
+            <span class="navbar-item">
                 DrinkBar designer ChiaYEH
+            </span>
+            <span class="navbar-item">
+                datasource:Pinterest.com/Freepik.com/Design.com
             </span>
 
         </div>

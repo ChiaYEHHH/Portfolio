@@ -40,7 +40,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            下拉選單
+                            Menu
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#drink">飲料</a></li>
@@ -48,15 +48,15 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">預約特製</a></li>
+                            <li><a class="dropdown-item" href="?do=orders">預約訂製</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="?do=creative">Creative</a>
+                        <a class="nav-link" aria-current="page" href="?do=creatives">Creative</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" aria-current="page"><i class="bi bi-cart4"></i></a>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>
@@ -100,19 +100,20 @@
     <!-- 旋轉圖片end -->
     <!-- news -->
     <div class="container mt-3" id="news">
-        <div class="row justify-content-around">
+        <div class="row mt-3 justify-content-around">
             <?php
             $news = $News->all(['sh' => 1]);
-            foreach ($news as $n) {
-                echo "<div class='col-3 card overflow-hidden' style='height: 160px;'>";
-                echo "<h5 class='card-title text-center' style='color:rgb(66, 170, 153);font-weight:bold;'>{$n['title']}</h5>";
-                echo "<div class='card-text'>";
-                echo "<p>{$n['article']}</p>";
-                echo "</div>";
-                echo "</div>";
-            }
-
+            foreach ($news as $n) :
             ?>
+                <div class="col p-2">
+                    <div class='card overflow-hidden p-2' style='height: 160px;'>
+                        <h5 class='card-title text-center' style='color:rgb(66, 170, 153);font-weight:bold;'><?= $n['title']; ?></h5>
+                        <div class='card-text'>
+                            <p><?= $n['article']; ?></p>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
     <!-- news end -->

@@ -4,17 +4,19 @@
     $news = $News->all(['sh' => 1]);
     foreach ($news as $n) :
     ?>
-        <div class='col-3 card overflow-hidden' style='height: 160px;'>
-            <h5 class='card-title text-center' style='color:rgb(66, 170, 153);font-weight:bold;'><?= $n['title']; ?></h5>
-            <div class='card-text'>
-                <p><?= $n['article']; ?></p>
+        <div class="col p-2">
+            <div class='card overflow-hidden p-2' style='height: 160px;'>
+                <h5 class='card-title text-center' style='color:rgb(66, 170, 153);font-weight:bold;'><?= $n['title']; ?></h5>
+                <div class='card-text'>
+                    <p><?= $n['article']; ?></p>
+                </div>
             </div>
         </div>
     <?php endforeach; ?>
 </div>
 
 <div class='row mt-3'>
-    <form action="./api/save.php" method="post" enctype="multipart/form-data">
+    <form action="./api/edit.php" method="post" enctype="multipart/form-data">
         <table class="table table-hover mt-3 text-center">
             <thead>
                 <tr>
@@ -40,7 +42,7 @@
             </tbody>
         </table>
         <div>
-            <input type="hidden" name="table" value="logos">
+            <input type="hidden" name="table" value="news">
             <button class="btn btn-primary" type="submit">修改</button>
             <button class="btn btn-danger" type="reset">重置</button>
         </div>
@@ -48,22 +50,22 @@
 </div>
 <br>
 <hr class="mt-5">
-<form action="./api/save.php" method="post" enctype="multipart/form-data">
-    <div class="mt-3">
-        <label for="newsTitle" class="form-label">最新消息標題</label>
-        <input type="text" class="form-control" name="title" id="newsTitle" placeholder="標題" required>
-    </div>
-    <div class="mb-3">
-        <label for="article" class="form-label">消息內容</label>
-        <textarea class="form-control" name="article" id="article" rows="3" placeholder="內容" required></textarea>
-    </div>
-    </div>
-    <div class="text-center">
-        <input type="hidden" name="table" value="news">
-        <!-- <input type="hidden" name="sh" value="0"> -->
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="reset" class="btn btn-danger">Reset</button>
-    </div>
 
-</form>
+<div class='row mt-3'>
+    <form action="./api/save.php" method="post" enctype="multipart/form-data">
+        <div class="mt-3">
+            <label for="newsTitle" class="form-label">新增最新消息</label>
+            <input type="text" class="form-control" name="title" id="newsTitle" placeholder="標題" required>
+        </div>
+        <div class="mb-3">
+            <label for="article" class="form-label">消息內容</label>
+            <textarea class="form-control" name="article" id="article" rows="3" placeholder="內容" required></textarea>
+        </div>
+        <div class="text-center">
+            <input type="hidden" name="table" value="news">
+            <input type="hidden" name="sh" value="0">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+        </div>
+    </form>
 </div>

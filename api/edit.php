@@ -12,11 +12,7 @@ $db = ${ucfirst($do)};
 // dd($id);
 // $db->del($id);
 // }
-
-
-if (!empty($_POST['del']) && in_array($id, $_POST['del'])) {
-    $db->del($id);
-}
+unset($_POST['table']);
 
 foreach ($_POST['id'] as $key => $id) {
     if (!empty($_POST['del']) && in_array($id, $_POST['del'])) {
@@ -39,7 +35,6 @@ foreach ($_POST['id'] as $key => $id) {
                 $row['text'] = $_POST['text'][$key];
                 break;
             case "ad":
-            case "news":
                 $row['text'] = $_POST['text'][$key];
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
                 break;
@@ -50,9 +45,13 @@ foreach ($_POST['id'] as $key => $id) {
             case 'logos':
                 $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $id) ? 1 : 0;
                 break;
+            case "news":
+                // $row['title'] = $_POST['title'][$key];
+                $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
+                break;
         }
 
         $db->save($row);
     }
 }
-to("../admin.php?do=logo_b");
+to("../admin.php");
