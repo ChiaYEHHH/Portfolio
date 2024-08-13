@@ -13,3 +13,5 @@
 5.index navbar的Menu,飲品蛋糕網址切換
 
 6.各表單rollback功能
+
+7.串天氣API 制定推薦飲品
